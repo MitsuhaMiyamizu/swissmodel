@@ -1,0 +1,22 @@
+Package: swissmodel
+Title: Protein Structure Prediction using Swiss-Model
+Version: 0.0.1
+Authors@R: c(
+    person(given = "Guangchuang", family = "Yu", email = "guangchuangyu@gmail.com",   role  = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781"))
+    )
+Description: Predict protein structures from amino acid sequences using the Swiss-Model web service. The 'swissmodel' package provides basis analysis and visualization capabilities through integration with the 'bio3d' and 'r3dmol' R packages.
+Depends:
+    R (>= 4.1.0)
+Imports:
+  bio3d,
+  ggplot2,
+  httr2,
+  jsonlite,
+  r3dmol,
+  rlang,
+  stats,
+  tools
+URL: https://github.com/YuLab-SMU/swissmodel
+License: Artistic-2.0
+Encoding: UTF-8
+RoxygenNote: 7.3.3

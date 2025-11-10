@@ -18,7 +18,7 @@ submit_automodel <- function(
   email = NULL
 ) {
   # Get token
-  SWISS_MODEL_TOKEN <- get_api_token()
+  SWISS_MODEL_TOKEN <- get_swissmodel_token()
   project <- "automodel"
 
   # Build request body
@@ -61,7 +61,7 @@ submit_alignment <- function(
   assembly_id = 1
 ) {
   # Get token
-  SWISS_MODEL_TOKEN <- get_api_token()
+  SWISS_MODEL_TOKEN <- get_swissmodel_token()
   project <- "alignment"
 
   # Build request body
@@ -95,7 +95,7 @@ submit_user_template <- function(
   project_title = "R User Template Project"
 ) {
   # Get token
-  SWISS_MODEL_TOKEN <- get_api_token()
+  SWISS_MODEL_TOKEN <- get_swissmodel_token()
   project <- "user_template"
 
   # Read template coordinates file
@@ -136,7 +136,7 @@ check_project_status <- function(
   max_wait_time = 1800
 ) {
   # Get token
-  SWISS_MODEL_TOKEN <- get_api_token()
+  SWISS_MODEL_TOKEN <- get_swissmodel_token()
 
   start_time <- Sys.time()
 
@@ -226,7 +226,7 @@ get_model_coordinates_urls <- function(status_info, file_format = "pdb") {
 #' @export
 download_model_file <- function(coordinates_url, output_file) {
   # Get token
-  SWISS_MODEL_TOKEN <- get_api_token()
+  SWISS_MODEL_TOKEN <- get_swissmodel_token()
 
   response <- request(coordinates_url) |>
     req_headers("Authorization" = paste("Token", SWISS_MODEL_TOKEN)) |>
@@ -265,7 +265,7 @@ bulk_download_projects <- function(
   output_dir = "./bulk_download"
 ) {
   # Get token
-  SWISS_MODEL_TOKEN <- get_api_token()
+  SWISS_MODEL_TOKEN <- get_swissmodel_token()
 
   # Build request parameters
   params <- list()

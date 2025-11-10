@@ -2,7 +2,7 @@
 #'
 #' @param token API token string
 #' @return No return value
-set_api_token <- function(token) {
+set_swissmodel_token <- function(token) {
   if (is.null(token) || nchar(token) == 0) {
     stop(
       "Please provide a valid API token. You can get it from your SWISS-MODEL account page: https://swissmodel.expasy.org/account"
@@ -12,10 +12,10 @@ set_api_token <- function(token) {
   message("API token set successfully")
 }
 
-get_api_token <- function() {
+get_swissmodel_token <- function() {
   token <- getOption("SWISS_MODEL_TOKEN")
   if (is.null(token)) {
-    stop("API token not set. Please use set_api_token() to set it.")
+    stop("API token not set. Please use set_swissmodel_token() to set it.")
   }
   return(token)
 }
@@ -33,7 +33,7 @@ send_post_request <- function(request_body, project) {
   )
 
   # Get token
-  SWISS_MODEL_TOKEN <- get_api_token()
+  SWISS_MODEL_TOKEN <- get_swissmodel_token()
 
   response <- sprintf("%s/%s", SWISS_MODEL_BASE_URL, project) |>
     request() |>

@@ -4,7 +4,7 @@ Version: 0.0.1
 Authors@R: c(
     person(given = "Guangchuang", family = "Yu", email = "guangchuangyu@gmail.com",   role  = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781"))
     )
-Description: Predict protein structures from amino acid sequences using the Swiss-Model web service. The 'swissmodel' package provides basis analysis and visualization capabilities through integration with the 'bio3d' and 'r3dmol' R packages.
+Description: An R interface to the SWISS-MODEL protein structure homology modeling service that provides programmatic access to automated protein structure prediction. This package enables users to predict protein structures from amino acid sequences using the Swiss-Model web service directly within R, while offering basic analysis and visualization capabilities through seamless integration with the 'bio3d' and 'r3dmol' R packages.
 Depends:
     R (>= 4.1.0)
 Imports:

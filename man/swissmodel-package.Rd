@@ -6,7 +6,7 @@
 \alias{swissmodel-package}
 \title{swissmodel: Protein Structure Prediction using Swiss-Model}
 \description{
-Predict protein structures from amino acid sequences using the Swiss-Model web service. The 'swissmodel' package provides basis analysis and visualization capabilities through integration with the 'bio3d' and 'r3dmol' R packages.
+An R interface to the SWISS-MODEL protein structure homology modeling service that provides programmatic access to automated protein structure prediction. This package enables users to predict protein structures from amino acid sequences using the Swiss-Model web service directly within R, while offering basic analysis and visualization capabilities through seamless integration with the 'bio3d' and 'r3dmol' R packages.
 }
 \seealso{
 Useful links:

@@ -212,20 +212,19 @@ plot_residue_composition <- function(pdb) {
 #' @importFrom r3dmol m_set_style
 #' @importFrom r3dmol m_style_cartoon
 #' @importFrom r3dmol m_zoom_to
-#' @importFrom bio3d write.pdb
+#' @importFrom r3dmol m_bio3d
 #' @export
 plot_pdb <- function(pdb) {
   if (inherits(pdb, "pdb")) {
-    pdb_file <- tempfile(fileext = ".pdb")
-    write.pdb(pdb, file = pdb_file)
+    pdb_data <- m_bio3d(pdb)
   } else if (is.character(pdb) && file.exists(pdb)) {
-    pdb_file <- pdb
+    pdb_data <- readLines(pdb)
   } else {
     stop("Invalid pdb input. Provide a pdb object or valid PDB file path.")
   }
 
   m <- r3dmol() |>
-    m_add_model(pdb_file, format = 'pdb') |>
+    m_add_model(pdb_data) |>
     m_set_style(style = m_style_cartoon(color = 'spectrum')) |>
     m_zoom_to()
   return(m)
